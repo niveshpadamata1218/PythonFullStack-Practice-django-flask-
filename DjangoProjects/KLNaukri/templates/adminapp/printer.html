@@ -1,0 +1,33 @@
+  {% extends 'navbar/adminnavbar.html' %}
+  {% load static %}
+
+  <html lang="en" xmlns="http://www.w3.org/1999/html">
+  <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+  </head>
+  <body>
+  {% block body %}
+<div class="container text-center" style="background-color: red">
+  <div class="row">
+    <div class="col">
+      FIRT ONE
+     <h1>INPUT BLOCK</h1><br>
+      <form method="POST" action ="{% url 'printer' %}">
+        {% csrf_token %}
+      <input type="text" name="klu" placeholder="enter name" />
+      <br><br>
+<div class="d-grid gap-2 col-6 mx-auto">
+  <button class="btn btn-primary" type="submit">Submit</button>
+</div>
+        </form>
+    </div>
+    <div class="col order-1" style="background-color: blue">
+      <h1>OUTPUT BLOCK</h1>
+      <h1> {{ klu }}</h1>
+    </div>
+  </div>
+</div>
+  {% endblock %}
+  </body>
+  </html>
